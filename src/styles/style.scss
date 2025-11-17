@@ -1,3 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-    background-color: red;
+    background-color: #ede07f;
+}
+#app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo__app{
+    margin-top: 50px;
+    width: 800px;
+    height: 320px;
+    background-image: url(./images/logo1-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-clip: border-box;
+}
+.pdx__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 630px;
+    background-image: url(./images/close-pdx-removebg-preview\ \(1\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    margin-bottom: 100px;
+    .formulario{
+        margin-top: 120px;
+        width: 250px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+
+    }
 }
