@@ -27,12 +27,77 @@ body{
     background-clip: border-box;
 }
 #PDX{
+    display: flex;
     border:2px solid #fff ;
-    margin: auto;
-    margin-top: 80px;
-    height: 800px;
-    width: 1200px;
+    height: 600px;
+    width: 850px;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(./images/open-pdx-removebg-preview.png);
+    object-fit: cover;
+}
+.pdx__side1{
+    margin-left: 7%;
+    height: 100%;
+    width: 45%;
+    //position: absolute;
+    border: 3px solid greenyellow;
+}
+.pdx__screen{
+    border: 3px solid greenyellow;
+    position: relative;
+    top: 190px;
+    left: 63px;
+    width: 245px;
+    height: 160px;
+}
+.pdx__side2{
+    //position: absolute;
+    height: 100%;
+    width: 45%;
+    border: 3px solid orange;
+}
+.pdx__number{
+    width: 130px;
+    height: 50px;
+    border:3px solid blue;
+    position: relative;
+    top: 309px;
+    left: 80px;
+}
+.pdx__screen2{
+    position: relative;
+    height: 88px;
+    width: 285px;
+    border: 3px solid greenyellow;
+    top: 190px;
+    left: 70px;
+}
+.div__shape{
+    display: flex;
+    width: 130px;
+    height: 41px;
+    border: 3px solid blue;
+    position: relative;
+    top: 310px;
+    left: 70px;
+    .hw{
+        width: 50%;
+        border: 2px solid red;
+    }
+}
+.T2{
+    display: flex;
+    position: relative;
+    top: 340px;
+    left: 70px;
+    border: 3px solid black;
+    height: 45px;
+    width: 287px;
+    justify-content: space-between;
+}
+.typeOf{
+    width: 128px;
+    
+    border: 3px solid red;
 }
