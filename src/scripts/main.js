@@ -1,4 +1,5 @@
-import '../styles/style.scss'
+import '../styles/style-Index1.scss';
 
 
-document.querySelector('#app').innerHTML = `Ta ready Isaac`
+
+

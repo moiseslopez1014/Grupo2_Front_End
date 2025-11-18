@@ -1,0 +1,1 @@
+import'../styles/style-Index2.scss';

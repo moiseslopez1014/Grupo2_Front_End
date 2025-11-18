@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ede07f;
+}
+.app2{
+    border:2px solid #fff ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px !important;
+    height: auto;
+    width: 100%;
+    
+}
+.logo__pdx{
+    border:2px solid #fff ;
+    margin-bottom: 60px;
+    width: 800px;
+    height: 320px;
+    background-image: url(./images/logo1-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-clip: border-box;
+}
+#PDX{
+    border:2px solid #fff ;
+    margin: auto;
+    margin-top: 80px;
+    height: 800px;
+    width: 1200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(./images/open-pdx-removebg-preview.png);
+}
