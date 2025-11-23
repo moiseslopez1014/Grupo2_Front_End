@@ -1,4 +1,4 @@
-
+import { loginValidation } from "../Api/loginValidation.js";
 
 
 // LOGIN FORM LISTENER
@@ -13,7 +13,7 @@ export function listenerLogin(form, user, password) {
             userPASS: password.value
         };
         //testing data processed
-        console.log(formData);
+        loginValidation(formData);
     })
 }
 /*
