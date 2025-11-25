@@ -7,7 +7,7 @@ body {
     background-color: #ede07f;
 }
 #app{
-    border:2px solid #fff ;
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,19 +21,19 @@ body {
 }
 .logo__app{
     
-    border:2px solid #fff ;
-    position: relative;
-    left: 720px;
-    bottom: 650px;
-    width: 300px;
-    height: 130px;
-    
-    background-image: url(../images/logo1.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+        position: relative;
+        left: 831px;
+        bottom: 566px;
+        width: 200px;
+        height: 100px;
+        background-image: url(../images/logo1.png);
+        background-repeat: no-repeat;
+        background-size: 200px,100px;
+    }
+
 .pdx__box{
-    border:2px solid #fff ;
+    
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,17 +42,55 @@ body {
     height:580px;
     background-image: url(../images/close-pdx-removebg-preview\ \(1\).png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 485px;
     background-position: left;
-    margin: auto;
-    margin-bottom: 80px;
+    
+    
     .formulario{
-        border:2px solid #fff ;
-        //margin-top: 120px;
+        
+        margin-top: 20px;
+        margin-left: 20px;
         width: 250px;
         gap: 20px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+    }
+}
+.BOTONSUBMIT{
+    margin-left: 30px;
+    background-color: #fa9a07;
+    color: #eee;
+    border-radius: 15px;
+    width: 100px;
+    height: 40px;
+    padding: 0;
+    font-size: 20px;
+    border:ridge;
+}
+.CUENTA{
+    color: #eee;
+    width: 160px;
+    height: 30px;
+    background-color: #ff000010;
+    border: none;
+    border-bottom: 2px solid #222;
+    border-left: 2px solid #222;
+    padding: 4px;
+    &::placeholder{
+        color: #eee;
+    }
+}
 
+.CLAVE{
+    width: 160px;
+    height: 30px;
+    background-color: #ff000010;
+    border:none;
+    border-bottom: 2px solid #222;
+    border-left: 2px solid #222;
+    padding: 4px;
+    &::placeholder{
+        color: #eee;
     }
 }
