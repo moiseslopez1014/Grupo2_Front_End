@@ -34,4 +34,4 @@ if (!user) {
 
 
 // Al cargar la página
-showAllPokemonsGrid(26); // Muestra los primeros 20 Pokémon
+showAllPokemonsGrid(); // Muestra los primeros 20 Pokémon

@@ -45,7 +45,7 @@ export function listenerLogin(form, user, password) {
 ///PARA QUE DEPENDIENDO DEL TIPO DE CUENTA ENTRE EN INDEX2 O EN INDEX3
 //TE LA DEJO COMENTADA PARA QUE LO REVISES ;)
 
-
+/*
 
 // src/scripts/events/loginListener.js
 import { loginValidation } from "../Api/loginValidation.js";
@@ -75,5 +75,52 @@ export function listenerLogin(form, user, password) {
     } else {
       window.location.href = "/index3.html";
     }
+  });
+}
+*/
+// src/scripts/events/loginListener.js
+import { loginValidation } from "../Api/loginValidation.js";
+
+export function listenerLogin(form, user, password) {
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    // Datos recogidos del formulario
+    const formData = {
+      userID: user.value,
+      userPASS: password.value
+    };
+
+    // Ejecutar validación
+    const result = await loginValidation(formData);
+
+    if (!result.ok) {
+      alert(result.message || "Login fallido");
+      return;
+    }
+
+    // Leer lo que guardó loginValidation
+    const stored = JSON.parse(localStorage.getItem("pdx_user"));
+
+    if (!stored) {
+      alert("Error inesperado.");
+      return;
+    }
+
+    // 1️⃣ Si es ADMIN → index2
+    if (stored.mode === "admin") {
+      window.location.href = "/index2.html";
+      return;
+    }
+
+    // 2️⃣ Si es POKÉMON → index3
+    if (stored.mode === "pokemon") {
+      window.location.href = "/index3.html";
+      return;
+    }
+
+    // 3️⃣ Fallback
+    alert("No se pudo determinar el tipo de acceso.");
   });
 }

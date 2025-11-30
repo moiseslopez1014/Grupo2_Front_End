@@ -1,185 +1,82 @@
-/*
-import {mainScreen, NumberPK, weigthDiv, heightDiv, typeDiv1, secondScreen} from "../main2.js";
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-export async function getData() {
-    try {
-      const res = await fetch('https://pokeapi.co/api/v2/pokemon/25');
-  
-      if (!res.ok) {
-        throw new Error("Error: " + res.status);
-      }
-  
-      const data = await res.json();
-      console.log(data);
-      return data;
-  
-    } catch (error) {
-      console.error("Hubo un problema:", error.message);
-    }
-  }
-  
-///////////////////////////////////////////////////////////////////////////////////////////////////
-export function pintarPokemon(data) {
-  mainScreen.innerHTML = `
-    <img  class="imgPK"src="${data.sprites.front_default}" alt="${data.name}">
-    <h2 class="namePK">${data.name.toUpperCase()}</h2>`,
-  NumberPK.innerHTML=`<p>Nº:${data.id}</p>`,
-  weigthDiv.innerHTML=`<p>${data.weight}</p>`,
-  heightDiv.innerHTML=`<p>${data.height}</p>`,
-  typeDiv1.innerHTML= `<p>${data.types.map(t => t.type.name).join(", ")}</p>`;
-}
 
-export async function showMe() {
-  const data = await getData();
-  if (data) {
-    pintarPokemon(data);
-  }
-}
-*/
-/*
+import { heightDiv, mainScreen, NumberPK, typeDiv1, weigthDiv, secondScreen, gridContainer, auxScreen, typeDiv0 } from '../main2.js';
 
-
-const gridContainer = document.querySelector("#pokemonGrid");
+const API_URL = "http://localhost:3000/pokemon";
 
 let selectedCard = null;
 
-// Crear card para grid
+// Función auxiliar para obtener sprite desde PokeAPI CDN
+function getSprite(id) {
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+}
+
+// Crear card
 export function createCardGrid(pokemon) {
-  const card = document.createElement("div");
-  card.classList.add("pokemon-card");
-  card.innerHTML = `
-      <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" width="80">
-      <p>${pokemon.name.toUpperCase()}</p>
-  `;
 
-  card.addEventListener("click", () => {
-      // Resalta la card seleccionada
-      if (selectedCard) selectedCard.classList.remove("selected");
-      card.classList.add("selected");
-      selectedCard = card;
+    const sprite = getSprite(pokemon.pokeID);
 
-      // Mostrar detalle
-      showDetail(pokemon);
-  });
-
-  gridContainer.appendChild(card);
-}
-
-// Mostrar detalle en tus divs y descripción
-export function showDetail(pokemon) {
-  // Info principal
-  mainScreen.innerHTML = `
-      <img class="imgPK" src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
-      <h2 class="namePK">${pokemon.name.toUpperCase()}</h2>
-  `;
-  NumberPK.innerHTML = `<p>Nº: ${pokemon.id}</p>`;
-  weigthDiv.innerHTML = `<p>${pokemon.weight}</p>`;
-  heightDiv.innerHTML = `<p>${pokemon.height}</p>`;
-  typeDiv1.innerHTML = `<p>${pokemon.types.map(t => t.type.name).join(", ")}</p>`;
-
-  // Descripción en pdxScreen2
-  const desc = pokemon.species?.flavor_text_entries?.find(e => e.language.name === "en")?.flavor_text 
-               || pokemon.description || "No description available";
-  secondScreen.innerHTML = `<p>${desc}</p>`;
-}
-
-// Cargar y mostrar grid completo
-export async function showAllPokemonsGrid(limit = 20) {
-  try {
-      const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
-      const data = await res.json();
-
-      gridContainer.innerHTML = ""; // limpiar grid
-
-      for (const p of data.results) {
-          const pokeRes = await fetch(p.url);
-          const pokeData = await pokeRes.json();
-
-          // Necesitamos también la descripción
-          const speciesRes = await fetch(pokeData.species.url);
-          const speciesData = await speciesRes.json();
-          pokeData.species = speciesData;
-
-          createCardGrid(pokeData);
-      }
-  } catch (error) {
-      console.error("Error cargando Pokémon:", error);
-  }
-}
-*/
-
-
-
-
-
-import { heightDiv, mainScreen, NumberPK, typeDiv1, weigthDiv, secondScreen, gridContainer, auxScreen,typeDiv0 } from '../main2.js';
-
-let selectedCard = null;
-
-// Crear card para grid
-export function createCardGrid(pokemon) {
     const card = document.createElement("div");
     card.classList.add("pokemon-card");
+
     card.innerHTML = `
-        <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" width="80">
-        <p>${pokemon.name.toUpperCase()}</p>
+        <img src="${sprite}" alt="${pokemon.pokeName}" width="80">
+        <p>${pokemon.pokeName.toUpperCase()}</p>
     `;
 
     card.addEventListener("click", () => {
-      typeDiv0.style.display="none";
+        typeDiv0.style.display = "none";
         showDetail(pokemon);
     });
 
     gridContainer.appendChild(card);
 }
 
-// Mostrar detalle en los divs laterales
+// Mostrar detalle
 export function showDetail(pokemon) {
-  auxScreen.style.display="block";
-    auxScreen.innerHTML = `
-        <img class="imgPK" src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
-        <h2 class="namePK">${pokemon.name.toUpperCase()}</h2>
-    `;
-    NumberPK.innerHTML = `<p>Nº: ${pokemon.id}</p>`;
-    weigthDiv.innerHTML = `<p>${pokemon.weight}</p>`;
-    heightDiv.innerHTML = `<p>${pokemon.height}</p>`;
-    typeDiv1.innerHTML = `<p>${pokemon.types.map(t => t.type.name).join(", ")}</p>`;
+    const sprite = getSprite(pokemon.pokeID);
 
-    const desc = pokemon.species?.flavor_text_entries?.find(e => e.language.name === "en")?.flavor_text
-                 || pokemon.description || "No description available";
+    auxScreen.style.display = "block";
+
+    auxScreen.innerHTML = `
+        <img class="imgPK" src="${sprite}" alt="${pokemon.pokeName}">
+        <h2 class="namePK">${pokemon.pokeName.toUpperCase()}</h2>
+    `;
+
+    NumberPK.innerHTML = `<p>Nº: ${pokemon.pokeID}</p>`;
+    weigthDiv.innerHTML = `<p>${pokemon.pokeOverview.weight}</p>`;
+    heightDiv.innerHTML = `<p>${pokemon.pokeOverview.height}</p>`;
+    typeDiv1.innerHTML = `<p>${pokemon.pokeOverview.types.join(", ")}</p>`;
+
+    const desc = pokemon.pokeOverview?.description || "No description available";
     secondScreen.innerHTML = `<p>${desc}</p>`;
 
-    auxScreen.addEventListener("click", () => {
-      auxScreen.style.display="none";
-      NumberPK.innerHTML = "";
-      weigthDiv.innerHTML ="";
-      heightDiv.innerHTML ="";
-      typeDiv1.innerHTML = "";
-      secondScreen.innerHTML ="";
-        typeDiv0.style.display="block";
-    });
+    // Volver al grid
+    auxScreen.onclick = () => {
+        auxScreen.style.display = "none";
+        NumberPK.innerHTML = "";
+        weigthDiv.innerHTML = "";
+        heightDiv.innerHTML = "";
+        typeDiv1.innerHTML = "";
+        secondScreen.innerHTML = "";
+        typeDiv0.style.display = "block";
+    };
 }
 
-// Cargar y mostrar grid completo
-export async function showAllPokemonsGrid(limit = 26) {
+// Mostrar todos los pokemons
+export async function showAllPokemonsGrid() {
     try {
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
+        const res = await fetch(API_URL);
         const data = await res.json();
+
+        const pokemonList = data.data; // tu backend
 
         gridContainer.innerHTML = "";
 
-        for (const p of data.results) {
-            const pokeRes = await fetch(p.url);
-            const pokeData = await pokeRes.json();
-
-            const speciesRes = await fetch(pokeData.species.url);
-            const speciesData = await speciesRes.json();
-            pokeData.species = speciesData;
-
-            createCardGrid(pokeData);
-        }
+        pokemonList.forEach(pokemon => {
+            createCardGrid(pokemon);
+        });
 
     } catch (error) {
-        console.error("Error cargando Pokémon:", error);
+        console.error("Error cargando Pokémon desde tu API local:", error);
     }
 }
