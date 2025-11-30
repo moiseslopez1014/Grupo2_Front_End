@@ -1,4 +1,10 @@
+@font-face {
+    font-family: "PIXEL";
+    src: url(../fonts/PKMNRBYGSC.ttf) format("truetype"); 
+}
+
 *{
+    font-family: "PIXEL", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -58,6 +64,7 @@ body {
     }
 }
 .BOTONSUBMIT{
+    font-family: "PIXEL", sans-serif;
     margin-left: 30px;
     background-color: #fa9a07;
     color: #eee;
@@ -67,6 +74,7 @@ body {
     padding: 0;
     font-size: 20px;
     border:ridge;
+    
 }
 .CUENTA{
     color: #eee;
@@ -79,6 +87,7 @@ body {
     padding: 4px;
     &::placeholder{
         color: #eee;
+        font-family: PIXEL, sans-serif;
     }
 }
 
