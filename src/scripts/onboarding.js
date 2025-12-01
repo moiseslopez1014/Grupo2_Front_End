@@ -24,6 +24,6 @@ nextBtn.addEventListener("click", () => {
         textDisplay.textContent = onboardingTexts[currentIndex];
     } else {
         // Último texto → redirige al login
-        window.location.href = "/index.html";
+        window.location.href = "/index1.html";
     }
 });
