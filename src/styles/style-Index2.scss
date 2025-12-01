@@ -98,7 +98,7 @@ background-image: url(../images/Artboard1.png);
 .T2{
     display: flex;
     position: relative;
-    top: 237px;
+    top: 207px;
     left: 37px;
     border: 3px solid black;
     height: 40px;
@@ -155,4 +155,21 @@ background-image: url(../images/Artboard1.png);
     left: 68px;
     width: 260px;
     height: 210px;
+}
+#deleteBtn{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+    top: 186px;
+    left: 262px;
+    background-color: transparent;
+    font-size: 9px;
+    cursor: pointer; 
+
+    &:hover {
+        transform: scale(1.08);
+        transition: transform 0.2s ease-in-out;
+   
+    }
 }
