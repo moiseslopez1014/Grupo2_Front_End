@@ -40,6 +40,14 @@ createButton.addEventListener("click", () => {
   setNewUserForm();
 });
 
+typeDiv2.addEventListener("click", () => {
+    console.log("Opening modify user form...");
+    const pokemon = JSON.parse(localStorage.getItem("Selected-Pokemon"));
+    console.log(pokemon);
+    setModifyUserForm(pokemon)
+  //setNewUserForm();
+});
+
 export function setNewUserForm() {
 
      if (document.querySelector("#newUserDiv")) {

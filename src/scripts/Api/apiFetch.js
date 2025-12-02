@@ -56,6 +56,7 @@ export function createCardGrid(pokemon) {
 // Mostrar detalle
 export function showDetail(pokemon) {
     selectedPokemon= pokemon;
+    localStorage.setItem("Selected-Pokemon", JSON.stringify(pokemon));
     const sprite = getSprite(pokemon.pokeID);
 
     auxScreen.style.display = "block";
