@@ -1,4 +1,4 @@
-import { showAllPokemonsGrid } from "./Api/apiFetch.js";
+import { showAllPokemonsGrid, togglePokemonToCollection } from "./Api/apiFetch.js";
 //import { showMe } from'../scripts/Api/apiFetch.js';
 import "../styles/style-Index2.scss";
 import {
@@ -12,6 +12,7 @@ export const asideRigth = document.querySelector("#pdxSide2");
 /////////////////////////////////////////////////////////////////
 export const mainScreen = document.querySelector("#pdxScreen");
 export const createButton = document.querySelector("#pdxCreateButton");
+export const ableDisableButton = document.querySelector("#pdxAbleDisable");
 export const NumberPK = document.querySelector("#pdxNumber");
 /////////////////////////////////////////////////////////////////////
 export const secondScreen = document.querySelector("#pdxScreen2");
@@ -24,6 +25,8 @@ export const typeDiv2 = document.querySelector("#type2");
 export const gridContainer = document.querySelector("#pokemonGrid");
 export const auxScreen = document.querySelector("#pdxScreenAux");
 
+export const selectedPokemon = JSON.parse(localStorage.getItem("Selected-Pokemon"));
+export const loggedAdmin = JSON.parse(localStorage.getItem("pdx_user"));
 ///////////////////////////////////////////////////////////
 /*const user = JSON.parse(localStorage.getItem("user"));
 if (!user) {
@@ -35,6 +38,11 @@ if (!user) {
 // Al cargar la página
 showAllPokemonsGrid(); // Muestra los primeros 20 Pokémon
 
+ableDisableButton.addEventListener("click", () => {
+  console.log("setting pokemon to collection", selectedPokemon, loggedAdmin);
+  togglePokemonToCollection(selectedPokemon, loggedAdmin);
+})
+
 createButton.addEventListener("click", () => {
     console.log("Opening new user form...");
   setNewUserForm();
@@ -42,9 +50,8 @@ createButton.addEventListener("click", () => {
 
 typeDiv2.addEventListener("click", () => {
     console.log("Opening modify user form...");
-    const pokemon = JSON.parse(localStorage.getItem("Selected-Pokemon"));
-    console.log(pokemon);
-    setModifyUserForm(pokemon)
+    console.log(selectedPokemon);
+    setModifyUserForm(selectedPokemon) // To Do, same functions as create
   //setNewUserForm();
 });
 
