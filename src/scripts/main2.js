@@ -51,8 +51,8 @@ export function setNewUserForm() {
   const newUserDiv = document.createElement("div");
   newUserDiv.id = "newUserDiv";
 
-  const newUserForm = document.createElement("form");
-  newUserForm.id = "newUserForm";
+  const newUserForm = document.querySelector("PDX"); ///////////////////////////////////////////////
+  newUserForm.id = "newUserForm";////////////////////////////////////////////////////////////////////
 
   // inputs
   const inputPokeName = document.createElement("input");
@@ -100,8 +100,8 @@ export function setNewUserForm() {
     saveButton
   );
 
-  newUserDiv.appendChild(newUserForm);
-  asideLeft.appendChild(newUserDiv);
+  //newUserDiv.appendChild(newUserForm);
+ // asideLeft.appendChild(newUserDiv);
 
   // Send elements
   eventsForNewUserForm({

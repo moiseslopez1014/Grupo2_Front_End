@@ -66,8 +66,8 @@ export function showDetail(pokemon) {
     `;
 
     NumberPK.innerHTML = `<p>Number: <br>    # ${pokemon.pokeID}</p>`;
-    weigthDiv.innerHTML = `<p>${pokemon.pokeOverview.weight} LB</p>`;
-    heightDiv.innerHTML = `<p>${pokemon.pokeOverview.height} INCH</p>`;
+    weigthDiv.innerHTML = `<p>W: ${pokemon.pokeOverview.weight}</p>`;
+    heightDiv.innerHTML = `<p>H: ${pokemon.pokeOverview.height}</p>`;
    // typeDiv1.innerHTML = `<p>${pokemon.pokeOverview.types}</p>`;
 
    const firstType = pokemon.pokeOverview.types[0];
