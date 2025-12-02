@@ -1,11 +1,11 @@
-import { createButton } from "../main2.js";
+import { createButton, pdx } from "../main2.js";
 import { setNewUserForm } from "../main2.js";
 import { createNewPokemonFetch } from "../Api/apiFetch.js";
 
 export function eventsForNewUserForm({
   cancelButton,
   saveButton,
-  newUserDiv,
+ // newUserDiv,
   inputPokeName,
   inputDescription,
   inputWeight,
@@ -14,8 +14,23 @@ export function eventsForNewUserForm({
 }) {
   cancelButton.addEventListener("click", (e) => {
     e.preventDefault();
-    newUserDiv.remove(); // cerrar formulario
+   /* pxd.remove(); // cerrar formulario
+  });*/
+  const inputElements = [
+   // newUserDiv,
+    inputPokeName,
+    inputDescription,
+    inputWeight,
+    inputHeight,
+    inputPokeType,
+    saveButton,
+    cancelButton
+  ];
+
+  inputElements.forEach(el => {
+    if (pdx.contains(el)) pdx.removeChild(el);
   });
+});
 
   saveButton.addEventListener("click", (e) => {
     console.log(e);
