@@ -51,7 +51,7 @@ typeDiv2.addEventListener("click", () => {
 
 export function setNewUserForm() {
 
-     if (document.querySelector("#newUserDiv")) {
+     if (document.querySelector("#inputPokeName")) {
     console.log("Form already set");
     return;
   }
