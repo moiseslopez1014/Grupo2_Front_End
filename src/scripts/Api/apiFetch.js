@@ -131,5 +131,22 @@ export async function createNewPokemonFetch(formGatherData) {
 
 
 export async function togglePokemonToCollection(selectedPokemon, loggedAdmin) {
-    
+    if (!selectedPokemon || !loggedAdmin) {
+        return alert("there is no enough params");
+    }
+    try {
+        const pokemon = selectedPokemon.pokeID;
+        const admin = loggedAdmin.userName;
+        console.log(pokemon, admin, typeof pokemon, typeof admin);
+        const response = await fetch(`${API_URL}/collection/${pokemon}`, {
+            method: "POST",
+            body: {
+                "userID": admin
+            }
+        });
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
 }
