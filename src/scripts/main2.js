@@ -1,4 +1,4 @@
-import { showAllPokemonsGrid } from "./Api/apiFetch.js";
+import { showAllPokemonsGrid } from "./events/showAll.js";
 //import { showMe } from'../scripts/Api/apiFetch.js';
 import "../styles/style-Index2.scss";
 import {

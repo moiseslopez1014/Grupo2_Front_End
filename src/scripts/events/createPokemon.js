@@ -1,6 +1,6 @@
 import { createButton, pdx,asideLeft,asideRigth  } from "../main2.js";
 import { setNewUserForm } from "../main2.js";
-import { createNewPokemonFetch } from "../Api/apiFetch.js";
+import { createNewPokemonFetch } from "./editPokemon.js";
 
 
 export function eventsForNewUserForm({

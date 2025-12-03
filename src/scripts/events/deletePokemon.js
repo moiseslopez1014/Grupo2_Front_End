@@ -19,3 +19,17 @@ export async function deletePoke(pokeID) {
     }
     
 };
+export const deletePokeBtn= document.querySelector("#deleteBtn");
+
+deletePokeBtn.addEventListener("click", async ()=>{
+    const pokeID = selectedPokemon.pokeID;
+    try {
+        await deletePoke(pokeID);
+        alert (`Pokemon Nº${pokeID} eliminado... :( `);
+
+       window.location.reload();
+
+    } catch (error) {
+        alert(error.message);
+    }
+})
