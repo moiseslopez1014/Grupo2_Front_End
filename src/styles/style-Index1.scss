@@ -72,34 +72,37 @@ body {
     width: 100px;
     height: 40px;
     padding: 0;
-    font-size: 20px;
+    font-size: 14px;
     border:ridge;
     
 }
 .CUENTA{
-    color: #eee;
+    color: greenyellow;
     width: 160px;
     height: 30px;
-    background-color: #ff000010;
+    background-color: #165749;
     border: none;
-    border-bottom: 2px solid #222;
-    border-left: 2px solid #222;
+    border-bottom: 2px solid greenyellow;
+    border-left: 2px solid greenyellow;
     padding: 4px;
     &::placeholder{
-        color: #eee;
+        color: greenyellow;
         font-family: PIXEL, sans-serif;
     }
 }
 
 .CLAVE{
+    
+    color: greenyellow;
     width: 160px;
     height: 30px;
-    background-color: #ff000010;
+    background-color:#165749;
     border:none;
-    border-bottom: 2px solid #222;
-    border-left: 2px solid #222;
+    border-bottom: 2px solid greenyellow;
+    border-left: 2px solid greenyellow;
     padding: 4px;
     &::placeholder{
-        color: #eee;
+        color: greenyellow;
+        
     }
 }

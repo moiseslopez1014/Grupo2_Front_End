@@ -70,7 +70,7 @@ export function showDetail(pokemon) {
     heightDiv.innerHTML = `<p>H: ${pokemon.pokeOverview.height}</p>`;
 
     const firstType = pokemon.pokeOverview.types[0];
-    typeDiv1.innerHTML = `<p>${typeTranslation[firstType] || firstType}</p>`;
+    typeDiv1.innerHTML = `<p>Type: <br> ${typeTranslation[firstType] || firstType}</p>`;
 
     const desc = pokemon.pokeOverview?.description || "No description available";
     secondScreen.innerHTML = `<p>Description:<br>${desc}</p>`;
@@ -81,6 +81,8 @@ export function showDetail(pokemon) {
     
 
     editBtn.addEventListener("click", () => {
+        if(selectedPokemon === null){return;}
+        else{
         // Cambiar los campos a inputs
         auxScreen.querySelector(".namePK").outerHTML = `<input type="text" id="editName" value="${pokemon.pokeName}">`;
         weigthDiv.innerHTML = `<input type="number" id="editWeight" value="${pokemon.pokeOverview.weight}">`;
@@ -89,11 +91,13 @@ export function showDetail(pokemon) {
         secondScreen.innerHTML = `<textarea id="editDesc">${pokemon.pokeOverview.description}</textarea>`;
  ////botojn cancel
  const noBtn = document.createElement("button");
- noBtn.textContent = "cancel";
+ noBtn.id="noBtn";
+ noBtn.textContent = "Can";
  asideRigth.appendChild(noBtn);
         // Botón Save
         const saveBtn = document.createElement("button");
-        saveBtn.textContent = "Save ";
+        saveBtn.id="editSaveBTN";
+        saveBtn.textContent = "Sav ";
         asideRigth.appendChild(saveBtn);
 
         saveBtn.addEventListener("click", async () => {
@@ -132,16 +136,16 @@ export function showDetail(pokemon) {
                 alert("Error de red al actualizar Pokémon");
             }
         });
-    });
+    }});
 
     // Volver al grid
     auxScreen.onclick = (e) => {
         
             auxScreen.style.display = "none";
             NumberPK.innerHTML = "Number:";
-            weigthDiv.innerHTML = "W";
-            heightDiv.innerHTML = "H";
-            typeDiv1.innerHTML = "Type";
+            weigthDiv.innerHTML = "W:";
+            heightDiv.innerHTML = "H:";
+            typeDiv1.innerHTML = "Type:";
             secondScreen.innerHTML = "Description:";
             typeDiv0.style.display = "block";
 

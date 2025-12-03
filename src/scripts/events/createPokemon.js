@@ -1,4 +1,4 @@
-import { createButton, pdx,asideLeft,asideRigth  } from "../main2.js";
+import { createButton, pdx,asideLeft,asideRigth, gridContainer  } from "../main2.js";
 import { setNewUserForm } from "../main2.js";
 import { createNewPokemonFetch } from "./editPokemon.js";
 
@@ -23,6 +23,8 @@ export function eventsForNewUserForm({
     asideRigth.removeChild(inputDescription)
     asideRigth.removeChild(saveButton)
     asideRigth.removeChild(cancelButton)
+    gridContainer.style.display="block";
+    //showAllPokemonsGrid();
 
   })
 

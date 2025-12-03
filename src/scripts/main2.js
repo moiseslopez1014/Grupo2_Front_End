@@ -38,6 +38,7 @@ showAllPokemonsGrid(); // Muestra los primeros 20 Pokémon
 
 createButton.addEventListener("click", () => {
     console.log("Opening new user form...");
+    gridContainer.style.display="none";
   setNewUserForm();
 });
 
