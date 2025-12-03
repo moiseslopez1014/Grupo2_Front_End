@@ -139,6 +139,7 @@ export function showDetail(pokemon) {
 /*
 export function showDetail(pokemon) {
     selectedPokemon= pokemon;
+    localStorage.setItem("Selected-Pokemon", JSON.stringify(pokemon));
     const sprite = getSprite(pokemon.pokeID);
 
     auxScreen.style.display = "block";
@@ -306,4 +307,5 @@ deletePokeBtn.addEventListener("click", async ()=>{
 
 export async function createNewPokemonFetch(formGatherData) {
     console.log('ole');
+    console.log(formGatherData);
 }
