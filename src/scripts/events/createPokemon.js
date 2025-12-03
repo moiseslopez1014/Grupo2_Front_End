@@ -1,6 +1,7 @@
-import { createButton, pdx } from "../main2.js";
+import { createButton, pdx,asideLeft,asideRigth  } from "../main2.js";
 import { setNewUserForm } from "../main2.js";
 import { createNewPokemonFetch } from "../Api/apiFetch.js";
+
 
 export function eventsForNewUserForm({
   cancelButton,

@@ -93,15 +93,16 @@ export function setNewUserForm() {
   saveButton.type = "submit";
   saveButton.textContent = "Sav";
 
-  pdx.append(
-    inputPokeName,
-    inputDescription,
-    inputWeight,
-    inputHeight,
-    inputPokeType,
-    cancelButton,
-    saveButton
+  asideRigth.append(
+    
+    inputDescription,//////
+    inputWeight,//////
+    inputHeight,//////
+    inputPokeType,//////
+    cancelButton,//////
+    saveButton//////
   );
+  asideLeft.appendChild(inputPokeName);
 
   //newUserDiv.appendChild(newUserForm);
  // asideLeft.appendChild(newUserDiv);
