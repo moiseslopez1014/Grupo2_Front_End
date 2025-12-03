@@ -13,28 +13,21 @@ export function eventsForNewUserForm({
   inputHeight,
   inputPokeType,
 }) {
+
   cancelButton.addEventListener("click", (e) => {
     e.preventDefault();
-   /* pxd.remove(); // cerrar formulario
-  });*/
-  const inputElements = [
-   // newUserDiv,
-    inputPokeName,
-    inputDescription,
-    inputWeight,
-    inputHeight,
-    inputPokeType,
-    saveButton,
-    cancelButton
-  ];
+    asideLeft.removeChild(inputPokeName)
+    asideRigth.removeChild(inputPokeType)
+    asideRigth.removeChild(inputHeight)
+    asideRigth.removeChild(inputWeight)
+    asideRigth.removeChild(inputDescription)
+    asideRigth.removeChild(saveButton)
+    asideRigth.removeChild(cancelButton)
 
-  inputElements.forEach(el => {
-    if (pdx.contains(el)) pdx.removeChild(el);
-  });
-});
+  })
+
 
   saveButton.addEventListener("click", (e) => {
-    console.log(e);
     e.preventDefault();
     if (
       inputPokeName.value.trim() == "" ||
