@@ -1,5 +1,5 @@
 import { API_URL, createCardGrid } from "./editPokemon";
-import { gridContainer } from "../main2";
+import { Dom } from "../dom/domElements.js";
 
 // Mostrar todos los pokemons
 export async function showAllPokemonsGrid() {
@@ -9,7 +9,7 @@ export async function showAllPokemonsGrid() {
 
         const pokemonList = data.data; // tu backend
 
-        gridContainer.innerHTML = "";
+        Dom.gridContainer.innerHTML = "";
 
         pokemonList.forEach(pokemon => {
             createCardGrid(pokemon);

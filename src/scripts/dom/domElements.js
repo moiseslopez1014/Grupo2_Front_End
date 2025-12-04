@@ -1,0 +1,18 @@
+export const Dom = {
+  anchorElement2: document.querySelector("#app2"),
+  pdx: document.querySelector("#PDX"),
+  asideLeft: document.querySelector("#pdxSide1"),
+  asideRight: document.querySelector("#pdxSide2"),
+  mainScreen: document.querySelector("#pdxScreen"),
+  createButton: document.querySelector("#pdxCreateButton"),
+  NumberPK: document.querySelector("#pdxNumber"),
+  secondScreen: document.querySelector("#pdxScreen2"),
+  shapeDiv: document.querySelector("#divShape"),
+  weigthDiv: document.querySelector("#WW"),
+  heightDiv: document.querySelector("#HH"),
+  typeDiv0: document.querySelector("#pdxScreen"),
+  typeDiv1: document.querySelector("#type1"),
+  typeDiv2: document.querySelector("#type2"),
+  gridContainer: document.querySelector("#pokemonGrid"),
+  auxScreen: document.querySelector("#pdxScreenAux"),
+};

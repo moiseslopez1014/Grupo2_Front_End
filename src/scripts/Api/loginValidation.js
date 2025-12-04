@@ -132,6 +132,8 @@ export async function loginValidation(inputData) {
     // --------------------------------------
     // 1️⃣ Intentar login como ADMIN
     // --------------------------------------
+    console.log("Login → enviando a backend:", inputData);
+
     const adminRes = await fetch(`${apiConfig.baseUrl}admin/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

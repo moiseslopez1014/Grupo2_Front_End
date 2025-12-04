@@ -1,12 +1,10 @@
-import { createButton, pdx,asideLeft,asideRigth, gridContainer  } from "../main2.js";
-import { setNewUserForm } from "../main2.js";
+import { Dom } from "../dom/domElements.js";
 import { createNewPokemonFetch } from "./editPokemon.js";
 
 
 export function eventsForNewUserForm({
   cancelButton,
   saveButton,
- // newUserDiv,
   inputPokeName,
   inputDescription,
   inputWeight,
@@ -16,14 +14,14 @@ export function eventsForNewUserForm({
 
   cancelButton.addEventListener("click", (e) => {
     e.preventDefault();
-    asideLeft.removeChild(inputPokeName)
-    asideRigth.removeChild(inputPokeType)
-    asideRigth.removeChild(inputHeight)
-    asideRigth.removeChild(inputWeight)
-    asideRigth.removeChild(inputDescription)
-    asideRigth.removeChild(saveButton)
-    asideRigth.removeChild(cancelButton)
-    gridContainer.style.display="block";
+    Dom.asideLeft.removeChild(inputPokeName)
+    Dom.asideRight.removeChild(inputPokeType)
+    Dom.asideRight.removeChild(inputHeight)
+    Dom.asideRight.removeChild(inputWeight)
+    Dom.asideRight.removeChild(inputDescription)
+    Dom.asideRight.removeChild(saveButton)
+    Dom.asideRight.removeChild(cancelButton)
+    Dom.gridContainer.style.display="block";
     //showAllPokemonsGrid();
 
   })

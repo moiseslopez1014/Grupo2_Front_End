@@ -1,29 +1,8 @@
 import { showAllPokemonsGrid } from "./events/showAll.js";
 //import { showMe } from'../scripts/Api/apiFetch.js';
 import "../styles/style-Index2.scss";
-import {
-  eventsForNewUserForm,
-} from "./events/createPokemon.js";
-///////////////////////////////////////////////////////////////////////
-/////////////LLAMADAS A ELEMENTOS//////////////////////////////////////
-export const anchorElement2 = document.querySelector("#app2");
-export const pdx= document.querySelector("#PDX");
-export const asideLeft = document.querySelector("#pdxSide1");
-export const asideRigth = document.querySelector("#pdxSide2");
-/////////////////////////////////////////////////////////////////
-export const mainScreen = document.querySelector("#pdxScreen");
-export const createButton = document.querySelector("#pdxCreateButton");
-export const NumberPK = document.querySelector("#pdxNumber");
-/////////////////////////////////////////////////////////////////////
-export const secondScreen = document.querySelector("#pdxScreen2");
-export const shapeDiv = document.querySelector("#divShape");
-export const weigthDiv = document.querySelector("#WW");
-export const heightDiv = document.querySelector("#HH");
-export const typeDiv0 = document.querySelector("#pdxScreen");
-export const typeDiv1 = document.querySelector("#type1");
-export const typeDiv2 = document.querySelector("#type2");
-export const gridContainer = document.querySelector("#pokemonGrid");
-export const auxScreen = document.querySelector("#pdxScreenAux");
+import { eventsForNewUserForm } from "./events/createPokemon.js";
+import { Dom } from "./dom/domElements.js";
 
 ///////////////////////////////////////////////////////////
 /*const user = JSON.parse(localStorage.getItem("user"));
@@ -36,32 +15,30 @@ if (!user) {
 // Al cargar la página
 showAllPokemonsGrid(); // Muestra los primeros 20 Pokémon
 
-createButton.addEventListener("click", () => {
-    console.log("Opening new user form...");
-    gridContainer.style.display="none";
+Dom.createButton.addEventListener("click", () => {
+  console.log("Opening new user form...");
+  Dom.gridContainer.style.display = "none";
   setNewUserForm();
 });
 
-typeDiv2.addEventListener("click", () => {
-    console.log("Opening modify user form...");
-    const pokemon = JSON.parse(localStorage.getItem("Selected-Pokemon"));
-    console.log(pokemon);
-    setModifyUserForm(pokemon)
+Dom.typeDiv2.addEventListener("click", () => {
+  console.log("Opening modify user form...");
+  const pokemon = JSON.parse(localStorage.getItem("Selected-Pokemon"));
+  console.log(pokemon);
+  setModifyUserForm(pokemon);
   //setNewUserForm();
 });
 
 export function setNewUserForm() {
-
-     if (document.querySelector("#inputPokeName")) {
+  if (document.querySelector("#inputPokeName")) {
     console.log("Form already set");
     return;
   }
 
+  const newUserDiv = document.createElement("div"); ////////////////////////////////////////////////////////
+  newUserDiv.id = "newUserDiv"; ////////////////////////////////////////////////////////////////////////////
 
-  const newUserDiv = document.createElement("div");////////////////////////////////////////////////////////
-  newUserDiv.id = "newUserDiv";////////////////////////////////////////////////////////////////////////////
-
- // const newUserForm = document.querySelector("PDX"); ///////////////////////////////////////////////
+  // const newUserForm = document.querySelector("PDX"); ///////////////////////////////////////////////
   //newUserForm.id = "newUserForm";////////////////////////////////////////////////////////////////////
 
   // inputs
@@ -73,7 +50,7 @@ export function setNewUserForm() {
   const inputDescription = document.createElement("input");
   inputDescription.id = "inputDescription";
   inputDescription.required = true;
-  inputDescription.placeholder = "Description:"
+  inputDescription.placeholder = "Description:";
 
   const inputWeight = document.createElement("input");
   inputWeight.id = "inputWeight";
@@ -95,32 +72,27 @@ export function setNewUserForm() {
   // buttons
   const cancelButton = document.createElement("button");
   cancelButton.textContent = "Can";
-  cancelButton.id="btnCancel";
+  cancelButton.id = "btnCancel";
 
   const saveButton = document.createElement("button");
-  saveButton.id="btnSave";
+  saveButton.id = "btnSave";
   saveButton.type = "submit";
   saveButton.textContent = "Sav";
 
-  asideRigth.append(
-    
-    inputDescription,//////
-    inputWeight,//////
-    inputHeight,//////
-    inputPokeType,//////
-    cancelButton,//////
-    saveButton//////
+  Dom.asideRight.append(
+    inputDescription, //////
+    inputWeight, //////
+    inputHeight, //////
+    inputPokeType, //////
+    cancelButton, //////
+    saveButton //////
   );
-  asideLeft.appendChild(inputPokeName);
-
-  //newUserDiv.appendChild(newUserForm);
- // asideLeft.appendChild(newUserDiv);
+  Dom.asideLeft.appendChild(inputPokeName);
 
   // Send elements
   eventsForNewUserForm({
     cancelButton,
     saveButton,
-    //newUserDiv,
     inputPokeName,
     inputDescription,
     inputWeight,

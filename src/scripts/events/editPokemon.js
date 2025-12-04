@@ -1,6 +1,5 @@
 
-import { heightDiv, mainScreen, NumberPK, typeDiv1, weigthDiv, secondScreen, gridContainer, auxScreen, typeDiv0, asideRigth } from '../main2.js';
-
+import {Dom} from "../dom/domElements.js";
 export const API_URL = "http://localhost:3000/pokemon";
 
 let selectedCard = null;
@@ -46,11 +45,11 @@ export function createCardGrid(pokemon) {
     `;
 
     card.addEventListener("click", () => {
-        typeDiv0.style.display = "none";
+        Dom.typeDiv0.style.display = "none";
         showDetail(pokemon);
     });
 
-    gridContainer.appendChild(card);
+    Dom.gridContainer.appendChild(card);
 }
 
 // Mostrar detalle con opción de editar
@@ -58,47 +57,44 @@ export function showDetail(pokemon) {
     selectedPokemon = pokemon;
     const sprite = getSprite(pokemon.pokeID);
 
-    auxScreen.style.display = "block";
+    Dom.auxScreen.style.display = "block";
 
-    auxScreen.innerHTML = `
+    Dom.auxScreen.innerHTML = `
         <img class="imgPK" src="${sprite}" alt="${pokemon.pokeName}">
         <h2 class="namePK">${pokemon.pokeName.toUpperCase()}</h2>
     `;
 
-    NumberPK.innerHTML = `<p>Number: <br> # ${pokemon.pokeID}</p>`;
-    weigthDiv.innerHTML = `<p>W: ${pokemon.pokeOverview.weight}</p>`;
-    heightDiv.innerHTML = `<p>H: ${pokemon.pokeOverview.height}</p>`;
+    Dom.NumberPK.innerHTML = `<p>Number: <br> # ${pokemon.pokeID}</p>`;
+    Dom.weigthDiv.innerHTML = `<p>W: ${pokemon.pokeOverview.weight}</p>`;
+    Dom.heightDiv.innerHTML = `<p>H: ${pokemon.pokeOverview.height}</p>`;
 
     const firstType = pokemon.pokeOverview.types[0];
-    typeDiv1.innerHTML = `<p>Type: <br> ${typeTranslation[firstType] || firstType}</p>`;
+    Dom.typeDiv1.innerHTML = `<p>Type: <br> ${typeTranslation[firstType] || firstType}</p>`;
 
     const desc = pokemon.pokeOverview?.description || "No description available";
-    secondScreen.innerHTML = `<p>Description:<br>${desc}</p>`;
-
-    // Botón Edit
-    const editBtn = document.querySelector("#type2");
+    Dom.secondScreen.innerHTML = `<p>Description:<br>${desc}</p>`;
     
     
 
-    editBtn.addEventListener("click", () => {
+    Dom.typeDiv2.addEventListener("click", () => {
         if(selectedPokemon === null){return;}
         else{
         // Cambiar los campos a inputs
-        auxScreen.querySelector(".namePK").outerHTML = `<input type="text" id="editName" value="${pokemon.pokeName}">`;
-        weigthDiv.innerHTML = `<input type="number" id="editWeight" value="${pokemon.pokeOverview.weight}">`;
-        heightDiv.innerHTML = `<input type="number" id="editHeight" value="${pokemon.pokeOverview.height}">`;
-        typeDiv1.innerHTML = `<input type="text" id="editType" value="${typeTranslation[firstType] || firstType}">`;
-        secondScreen.innerHTML = `<textarea id="editDesc">${pokemon.pokeOverview.description}</textarea>`;
+        Dom.auxScreen.querySelector(".namePK").outerHTML = `<input type="text" id="editName" value="${pokemon.pokeName}">`;
+        Dom.weigthDiv.innerHTML = `<input type="number" id="editWeight" value="${pokemon.pokeOverview.weight}">`;
+        Dom.heightDiv.innerHTML = `<input type="number" id="editHeight" value="${pokemon.pokeOverview.height}">`;
+        Dom.typeDiv1.innerHTML = `<input type="text" id="editType" value="${typeTranslation[firstType] || firstType}">`;
+        Dom.secondScreen.innerHTML = `<textarea id="editDesc">${pokemon.pokeOverview.description}</textarea>`;
  ////botojn cancel
  const noBtn = document.createElement("button");
  noBtn.id="noBtn";
  noBtn.textContent = "Can";
- asideRigth.appendChild(noBtn);
+ Dom.asideRight.appendChild(noBtn);
         // Botón Save
         const saveBtn = document.createElement("button");
         saveBtn.id="editSaveBTN";
         saveBtn.textContent = "Sav ";
-        asideRigth.appendChild(saveBtn);
+        Dom.asideRight.appendChild(saveBtn);
 
         saveBtn.addEventListener("click", async () => {
             // Convertimos tipo a su versión interna si es necesario
@@ -139,15 +135,15 @@ export function showDetail(pokemon) {
     }});
 
     // Volver al grid
-    auxScreen.onclick = (e) => {
+    Dom.auxScreen.onclick = (e) => {
         
-            auxScreen.style.display = "none";
-            NumberPK.innerHTML = "Number:";
-            weigthDiv.innerHTML = "W:";
-            heightDiv.innerHTML = "H:";
-            typeDiv1.innerHTML = "Type:";
-            secondScreen.innerHTML = "Description:";
-            typeDiv0.style.display = "block";
+            Dom.auxScreen.style.display = "none";
+            Dom.NumberPK.innerHTML = "Number:";
+            Dom.weigthDiv.innerHTML = "W:";
+            Dom.heightDiv.innerHTML = "H:";
+            Dom.typeDiv1.innerHTML = "Type:";
+            Dom.secondScreen.innerHTML = "Description:";
+            Dom.typeDiv0.style.display = "block";
 
             selectedPokemon = null;
         
@@ -156,6 +152,9 @@ export function showDetail(pokemon) {
 
 //////////////////////????????????????????????????/////////////////////////////////////////////////////
 export async function createNewPokemonFetch(formGatherData) {
-    console.log('ole');
-    console.log(formGatherData);
+    try {
+        
+    } catch (error) {
+        
+    }
 }
