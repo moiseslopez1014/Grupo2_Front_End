@@ -15,4 +15,5 @@ export const Dom = {
   typeDiv2: document.querySelector("#type2"),
   gridContainer: document.querySelector("#pokemonGrid"),
   auxScreen: document.querySelector("#pdxScreenAux"),
+  deleteButton: document.querySelector("#deleteBtn"),
 };

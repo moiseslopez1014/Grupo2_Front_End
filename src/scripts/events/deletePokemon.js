@@ -1,8 +1,27 @@
 import { apiConfig } from "../Api/apiConfig.js";
+import { Dom } from "../dom/domElements.js";
+
+Dom.deleteButton.addEventListener("click", async (event)=>{
+    console.log("ole");
+    event.preventDefault();
+    const selectedPokemon = sessionStorage.getItem("Selected-Pokemon")
+    pokeID = selectedPokemon.pokeID;
+    console.log([pokeID]);
+    try {
+        await deletePoke(pokeID);
+        alert (`Pokemon Nº${pokeID} eliminado... :( `);
+
+       //window.location.reload();
+
+    } catch (error) {
+        alert(error.message);
+    }
+})
 
 export async function deletePoke(pokeID) {
+    console.log("ole");
     try {
-        const response= await fetch(`${apiConfig.baseUrl}pokemon/${pokeID}`,{
+        const response= await fetch(`${apiConfig.pokemon}${pokeID}`,{
         method: "DELETE",
         headers:{"Content-type": "application/json"}    
         })
@@ -19,17 +38,3 @@ export async function deletePoke(pokeID) {
     }
     
 };
-export const deletePokeBtn= document.querySelector("#deleteBtn");
-
-deletePokeBtn.addEventListener("click", async ()=>{
-    const pokeID = selectedPokemon.pokeID;
-    try {
-        await deletePoke(pokeID);
-        alert (`Pokemon Nº${pokeID} eliminado... :( `);
-
-       window.location.reload();
-
-    } catch (error) {
-        alert(error.message);
-    }
-})

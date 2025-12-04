@@ -55,6 +55,7 @@ export function createCardGrid(pokemon) {
 // Mostrar detalle con opción de editar
 export function showDetail(pokemon) {
     selectedPokemon = pokemon;
+    sessionStorage.setItem("Selected-Pokemon", JSON.stringify(selectedPokemon))
     const sprite = getSprite(pokemon.pokeID);
 
     Dom.auxScreen.style.display = "block";
@@ -151,10 +152,3 @@ export function showDetail(pokemon) {
 }
 
 //////////////////////????????????????????????????/////////////////////////////////////////////////////
-export async function createNewPokemonFetch(formGatherData) {
-    try {
-        
-    } catch (error) {
-        
-    }
-}

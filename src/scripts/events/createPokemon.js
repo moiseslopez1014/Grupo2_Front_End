@@ -1,5 +1,5 @@
 import { Dom } from "../dom/domElements.js";
-import { createNewPokemonFetch } from "./editPokemon.js";
+import { createNewPokemonFetch } from "../Api/createNewPokemon.js";
 
 
 export function eventsForNewUserForm({
