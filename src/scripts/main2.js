@@ -3,6 +3,7 @@ import { showAllPokemonsGrid } from "./events/showAll.js";
 import "../styles/style-Index2.scss";
 import { eventsForNewUserForm } from "./events/createPokemon.js";
 import { Dom } from "./dom/domElements.js";
+import { eventListenerForDelete } from "./events/deletePokemon.js";
 
 ///////////////////////////////////////////////////////////
 /*const user = JSON.parse(localStorage.getItem("user"));
@@ -14,6 +15,8 @@ if (!user) {
 
 // Al cargar la página
 showAllPokemonsGrid(); // Muestra los primeros 20 Pokémon
+
+eventListenerForDelete();
 
 Dom.createButton.addEventListener("click", () => {
   console.log("Opening new user form...");

@@ -1,22 +1,14 @@
 import { apiConfig } from "../Api/apiConfig.js";
 import { Dom } from "../dom/domElements.js";
 
+export async function eventListenerForDelete() {
 Dom.deleteButton.addEventListener("click", async (event)=>{
-    console.log("ole");
     event.preventDefault();
-    const selectedPokemon = sessionStorage.getItem("Selected-Pokemon")
-    pokeID = selectedPokemon.pokeID;
-    console.log([pokeID]);
-    try {
-        await deletePoke(pokeID);
-        alert (`Pokemon Nº${pokeID} eliminado... :( `);
-
-       //window.location.reload();
-
-    } catch (error) {
-        alert(error.message);
-    }
+    const selectedPokemon = JSON.parse(sessionStorage.getItem("Selected-Pokemon"));
+    
+    deletePoke(selectedPokemon.pokeID);
 })
+}
 
 export async function deletePoke(pokeID) {
     console.log("ole");
@@ -30,11 +22,10 @@ export async function deletePoke(pokeID) {
             throw new Error(errMessage);
         }
         const data = await response.json();
-        return console.log(data);
+        console.log(data);
+        return window.location.reload();
 
     } catch (error) {
         throw new Error(error.message);
-        
     }
-    
 };
