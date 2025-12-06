@@ -50,7 +50,7 @@ export function setNewUserForm() {
   inputPokeName.required = true;
   inputPokeName.placeholder = "Nombre";
 
-  const inputDescription = document.createElement("input");
+  const inputDescription = document.createElement("textarea");
   inputDescription.id = "inputDescription";
   inputDescription.required = true;
   inputDescription.placeholder = "Description:";
@@ -70,7 +70,7 @@ export function setNewUserForm() {
   const inputPokeType = document.createElement("input");
   inputPokeType.id = "inputPokeType";
   inputPokeType.required = true;
-  //inputPokeType.placeholder = "Tipo";
+  inputPokeType.placeholder = "Type:";
 
   // buttons
   const cancelButton = document.createElement("button");
