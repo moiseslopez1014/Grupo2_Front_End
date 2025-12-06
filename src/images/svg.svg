@@ -1,0 +1,16 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>Layer 1</title>
+  <g>
+   <g fill-rule=" nonzero" fill=" none" stroke-miterlimit="10" stroke-linejoin=" miter" stroke-linecap=" butt" stroke-dasharray=" none" stroke-width="0" stroke=" none" transform="translate(1.40659 1.40659) scale(2.81 2.81)">
+    <path fill-rule=" nonzero" fill="#ffffff" stroke-miterlimit="10" stroke-linejoin=" miter" stroke-dasharray=" none" stroke=" none" stroke-linecap=" butt" d="m164.53969,151.261l-45.384,0c-3.042,0 -5.518,-2.476 -5.518,-5.518l0,-61c0,-1.104 0.896,-2 2,-2l52.42,0c1.104,0 2,0.896 2,2l0,61c0,3.042 -2.476,5.518 -5.518,5.518zm-46.902,-64.518l0,59c0,0.837 0.681,1.518 1.518,1.518l45.385,0c0.837,0 1.518,-0.681 1.518,-1.518l0,-59l-48.421,0z"/>
+    <path fill-rule=" nonzero" fill="#ffffff" stroke-miterlimit="10" stroke-linejoin=" miter" stroke-dasharray=" none" stroke=" none" stroke-linecap=" butt" d="m170.04369,86.743l-56.392,0c-3.042,0 -5.518,-2.475 -5.518,-5.518l0,-4.335c0,-3.042 2.475,-5.518 5.518,-5.518l56.393,0c3.042,0 5.518,2.475 5.518,5.518l0,4.335c-0.001,3.043 -2.477,5.518 -5.519,5.518zm-56.392,-11.37c-0.837,0 -1.518,0.681 -1.518,1.518l0,4.335c0,0.837 0.681,1.518 1.518,1.518l56.393,0c0.837,0 1.518,-0.681 1.518,-1.518l0,-4.335c0,-0.837 -0.681,-1.518 -1.518,-1.518l-56.393,0z"/>
+    <path fill-rule=" nonzero" fill="#ffffff" stroke-miterlimit="10" stroke-linejoin=" miter" stroke-dasharray=" none" stroke=" none" stroke-linecap=" butt" d="m154.04469,75.373l-24.394,0c-1.104,0 -2,-0.896 -2,-2l0,-6.594c0,-3.042 2.475,-5.518 5.518,-5.518l17.358,0c3.043,0 5.519,2.476 5.519,5.518l0,6.594c-0.001,1.104 -0.896,2 -2.001,2zm-22.394,-4l20.395,0l0,-4.594c-0.001,-0.837 -0.682,-1.518 -1.519,-1.518l-17.358,0c-0.837,0 -1.518,0.681 -1.518,1.518l0,4.594z"/>
+    <path fill-rule=" nonzero" fill="#ffffff" stroke-miterlimit="10" stroke-linejoin=" miter" stroke-dasharray=" none" stroke=" none" stroke-linecap=" butt" d="m141.84769,139.885c-1.104,0 -2,-0.896 -2,-2l0,-41.768c0,-1.104 0.896,-2 2,-2s2,0.896 2,2l0,41.768c0,1.105 -0.896,2 -2,2z"/>
+    <path fill-rule=" nonzero" fill="#ffffff" stroke-miterlimit="10" stroke-linejoin=" miter" stroke-dasharray=" none" stroke=" none" stroke-linecap=" butt" d="m155.06969,139.885c-1.104,0 -2,-0.896 -2,-2l0,-41.768c0,-1.104 0.896,-2 2,-2s2,0.896 2,2l0,41.768c0,1.105 -0.896,2 -2,2z"/>
+    <path fill-rule=" nonzero" fill="#ffffff" stroke-miterlimit="10" stroke-linejoin=" miter" stroke-dasharray=" none" stroke=" none" stroke-linecap=" butt" d="m128.62669,139.885c-1.104,0 -2,-0.896 -2,-2l0,-41.768c0,-1.104 0.896,-2 2,-2s2,0.896 2,2l0,41.768c0,1.105 -0.896,2 -2,2z"/>
+   </g>
+  </g>
+ </g>
+</svg>

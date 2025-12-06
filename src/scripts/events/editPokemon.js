@@ -75,12 +75,13 @@ export function showDetail(pokemon) {
     const desc = pokemon.pokeOverview?.description || "No description available";
     Dom.secondScreen.innerHTML = `<p>Description:<br>${desc}</p>`;
     
-    
-
+    Dom.createButton.className="newView";
+    Dom.typeDiv2.classList="typeOf";
     Dom.typeDiv2.addEventListener("click", () => {
         if(selectedPokemon === null){return;}
         else{
         // Cambiar los campos a inputs
+        Dom.typeDiv2.style.color="grey";
         Dom.auxScreen.querySelector(".namePK").outerHTML = `<input type="text" id="editName" value="${pokemon.pokeName}">`;
         Dom.weigthDiv.innerHTML = `<input type="number" id="editWeight" value="${pokemon.pokeOverview.weight}">`;
         Dom.heightDiv.innerHTML = `<input type="number" id="editHeight" value="${pokemon.pokeOverview.height}">`;
@@ -136,8 +137,10 @@ export function showDetail(pokemon) {
     }});
 
     // Volver al grid
-    Dom.auxScreen.onclick = (e) => {
-        
+    const imgPoke = document.querySelector(".imgPK");
+    imgPoke.onclick = (e) => {
+        Dom.createButton.className="";
+            Dom.typeDiv2.classList="typeOf, editView";
             Dom.auxScreen.style.display = "none";
             Dom.NumberPK.innerHTML = "Number:";
             Dom.weigthDiv.innerHTML = "W:";
