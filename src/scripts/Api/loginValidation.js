@@ -150,7 +150,8 @@ export async function loginValidation(inputData) {
       // Guardamos en localStorage la info mínima
       const payload = {
         mode: "admin",        // indica que es admin
-        userName: user.userID // tu backend usa userID
+        userName: user.userID, // tu backend usa userID
+        collection: user.adminCollection
       };
 
       localStorage.setItem("pdx_user", JSON.stringify(payload));

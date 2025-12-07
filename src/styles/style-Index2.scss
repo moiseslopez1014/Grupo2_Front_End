@@ -120,7 +120,7 @@ background-image: url(../images/Artboard1.png);
     height: 45px;
    font-weight: bolder;
     position: relative;
-    top: 178px;
+    top: 159px;
     left: 104px;
 }
 // ADD NEW USER BUTTON
@@ -576,4 +576,28 @@ span{
 .btn-delete:hover,
 .btn-cancel:hover {
   opacity: 0.8;
+}
+
+.team-btn {
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    bottom: -134px;
+    left: 124px;
+    width: 51px;
+    height: 14px;
+    font-size: 11px;
+}
+
+.team-btn.in-team {
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    bottom: -134px;
+    left: 185px;
+    width: 51px;
+    height: 14px;
+    font-size: 11px;
 }

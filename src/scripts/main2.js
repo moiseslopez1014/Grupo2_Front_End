@@ -1,9 +1,9 @@
 import { showAllPokemonsGrid } from "./events/showAll.js";
-//import { showMe } from'../scripts/Api/apiFetch.js';
 import "../styles/style-Index2.scss";
 import { eventsForNewUserForm } from "./events/createPokemon.js";
 import { Dom } from "./dom/domElements.js";
 import { eventListenerForDelete } from "./events/deletePokemon.js";
+import { teamToggleListener } from "./events/teamToggleListener.js";
 
 ///////////////////////////////////////////////////////////
 /*const user = JSON.parse(localStorage.getItem("user"));
@@ -16,7 +16,14 @@ if (!user) {
 // Al cargar la página
 showAllPokemonsGrid(); // Muestra los primeros 20 Pokémon
 
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
 eventListenerForDelete();
+teamToggleListener();
+});
+
 
 Dom.createButton.addEventListener("click", () => {
   console.log("Opening new user form...");
@@ -103,3 +110,15 @@ export function setNewUserForm() {
     inputPokeType,
   });
 }
+
+export function showDetailButtons() {
+    Dom.toggleTeamBtn.style.display = "block";
+    Dom.deleteButton.style.display = "block";
+}
+
+export function hideDetailButtons() {
+    Dom.toggleTeamBtn.style.display = "none";
+    Dom.deleteButton.style.display = "none";
+}
+
+hideDetailButtons();

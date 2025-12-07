@@ -20,5 +20,5 @@ export const Dom = {
   deleteModal: document.querySelector("#deleteModal"),
   cancelDeleteBtn: document.querySelector("#cancelDeleteBtn"),
   confirmDeleteBtn: document.querySelector("#confirmDeleteBtn"),
-  toggleTeamBtn: document.querySelector("toggleTeamBtn")
+  toggleTeamBtn: document.querySelector("#toggleTeamBtn")
 };

@@ -1,5 +1,5 @@
-
 import {Dom} from "../dom/domElements.js";
+import { hideDetailButtons, showDetailButtons } from "../main2.js";
 export const API_URL = "http://localhost:3000/pokemon";
 
 let selectedCard = null;
@@ -34,6 +34,7 @@ function getSprite(id) {
 // Crear card
 export function createCardGrid(pokemon) {
 
+
     const sprite = getSprite(pokemon.pokeID);
 
     const card = document.createElement("div");
@@ -47,13 +48,36 @@ export function createCardGrid(pokemon) {
     card.addEventListener("click", () => {
         Dom.typeDiv0.style.display = "none";
         showDetail(pokemon);
+
     });
 
     Dom.gridContainer.appendChild(card);
 }
 
+function updateButtonStateOnSelect(selectedPokeID) {
+    const admin = JSON.parse(localStorage.getItem("pdx_user"));
+    if (!admin || admin.mode !== "admin") return;
+    console.log(admin);
+    console.log(selectedPokeID);
+
+            const team = admin.collection;
+            console.log(team);
+
+            if (team.includes(selectedPokeID)) {
+                Dom.toggleTeamBtn.textContent = "Rmv";
+                Dom.toggleTeamBtn.classList.add("in-team");
+            } else {
+                Dom.toggleTeamBtn.textContent = "Add";
+                Dom.toggleTeamBtn.classList.remove("in-team");
+            }
+return;
+}
+
+
 // Mostrar detalle con opción de editar
 export function showDetail(pokemon) {
+    showDetailButtons();
+    updateButtonStateOnSelect(pokemon.pokeID);
     selectedPokemon = pokemon;
     sessionStorage.setItem("Selected-Pokemon", JSON.stringify(selectedPokemon))
     const sprite = getSprite(pokemon.pokeID);
@@ -139,6 +163,7 @@ export function showDetail(pokemon) {
     // Volver al grid
     const imgPoke = document.querySelector(".imgPK");
     imgPoke.onclick = (e) => {
+        hideDetailButtons();
         Dom.createButton.className="";
             Dom.typeDiv2.classList="typeOf, editView";
             Dom.auxScreen.style.display = "none";
@@ -153,5 +178,3 @@ export function showDetail(pokemon) {
         
     };
 }
-
-//////////////////////????????????????????????????/////////////////////////////////////////////////////
