@@ -17,4 +17,7 @@ export const Dom = {
   gridContainer: document.querySelector("#pokemonGrid"),
   auxScreen: document.querySelector("#pdxScreenAux"),
   deleteButton: document.querySelector("#deleteBtn"),
+  deleteModal: document.querySelector("#deleteModal"),
+  cancelDeleteBtn: document.querySelector("#cancelDeleteBtn"),
+  confirmDeleteBtn: document.querySelector("#confirmDeleteBtn"),
 };

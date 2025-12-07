@@ -14,72 +14,68 @@
             <div id="pokemonGrid" class="pokemon-Grid"></div>
           </div>
           <div id="pdxScreenAux"></div>
-          <div id="pdxCreateButton" >
-            
-              <!-- ADD USER SVG -->
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 64 64"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <!-- Cabeza -->
-                <circle
-                  cx="28"
-                  cy="20"
-                  r="12"
-                  stroke="white"
-                  stroke-width="4"
-                />
+          <div id="pdxCreateButton">
+            <!-- ADD USER SVG -->
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Cabeza -->
+              <circle cx="28" cy="20" r="12" stroke="white" stroke-width="4" />
 
-                <!-- Cuerpo -->
-                <path
-                  d="M8 54c0-10.5 9-19 20-19s20 8.5 20 19"
-                  stroke="white"
-                  stroke-width="4"
-                  stroke-linecap="round"
-                />
+              <!-- Cuerpo -->
+              <path
+                d="M8 54c0-10.5 9-19 20-19s20 8.5 20 19"
+                stroke="white"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
 
-                <!-- Signo + reducido y alineado -->
-                <line
-                  x1="52"
-                  y1="22"
-                  x2="52"
-                  y2="36"
-                  stroke="white"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-                <line
-                  x1="45"
-                  y1="29"
-                  x2="59"
-                  y2="29"
-                  stroke="white"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-              </svg>
-            
+              <!-- Signo + reducido y alineado -->
+              <line
+                x1="52"
+                y1="22"
+                x2="52"
+                y2="36"
+                stroke="white"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <line
+                x1="45"
+                y1="29"
+                x2="59"
+                y2="29"
+                stroke="white"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+            </svg>
           </div>
-          <div id="pdxNumber" class="pdx__number">Number:<br>#</div>
+          <div id="pdxNumber" class="pdx__number">Number:<br />#</div>
         </section>
         <!-------------------------------------------------------------------------------------------------->
         <section id="pdxSide2" class="pdx__side2">
-          <article id="pdxScreen2" class="pdx__screen2"><span>Descrption:</span></article>
+          <article id="pdxScreen2" class="pdx__screen2">
+            <span>Descrption:</span>
+          </article>
           <div id="divShape" class="div__shape">
             <div id="HH" class="hw">W:</div>
             <div id="WW" class="hw">H:</div>
           </div>
-          
+
           <button id="deleteBtn" type="button"></button>
           <div id="T2" class="T2">
             <div id="type1" class="typeOf"><span>Type:</span></div>
-            <button id="type2" type="button" class="typeOf, editView ">EDIT</button>
+            <button id="type2" type="button" class="typeOf, editView">
+              EDIT
+            </button>
           </div>
         </section>
-    </form>
+      </form>
     </main>
     <!-------------------------------------------------------------------------------------------------->
 
@@ -88,6 +84,17 @@
       <a href="/index.html">pagina1</a>
       <a href="/index3.html">pagina3</a>
       <div class="logo__pdx"></div>
+    </div>
+    <div id="deleteModal" class="modal hidden">
+      <div class="modal-content">
+        <h3>¿Seguro que deseas eliminar este Pokémon?</h3>
+        <p>Esta acción no se puede deshacer.</p>
+
+        <div class="modal-buttons">
+          <button id="cancelDeleteBtn" class="btn-cancel">Cancelar</button>
+          <button id="confirmDeleteBtn" class="btn-delete">Eliminar</button>
+        </div>
+      </div>
     </div>
     <script type="module" src="/src/scripts/main2.js"></script>
   </body>

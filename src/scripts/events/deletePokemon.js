@@ -1,31 +1,28 @@
-import { apiConfig } from "../Api/apiConfig.js";
+import { deletePoke } from "../Api/deletePokemonFetch.js";
 import { Dom } from "../dom/domElements.js";
 
-export async function eventListenerForDelete() {
-Dom.deleteButton.addEventListener("click", async (event)=>{
-    event.preventDefault();
-    const selectedPokemon = JSON.parse(sessionStorage.getItem("Selected-Pokemon"));
-    
-    deletePoke(selectedPokemon.pokeID);
-})
-}
+let pokemonToDelete = null;
 
-export async function deletePoke(pokeID) {
-    console.log("ole");
-    try {
-        const response= await fetch(`${apiConfig.pokemon}${pokeID}`,{
-        method: "DELETE",
-        headers:{"Content-type": "application/json"}    
-        })
-        if(!response.ok){
-            const errMessage = await response.text();
-            throw new Error(errMessage);
-        }
-        const data = await response.json();
-        console.log(data);
-        return window.location.reload();
-
-    } catch (error) {
-        throw new Error(error.message);
+export function eventListenerForDelete() {
+Dom.deleteButton.addEventListener("click", () => {
+    if (!sessionStorage.getItem("Selected-Pokemon")) {
+        alert("No hay Pokémon seleccionado.");
+        return;
     }
-};
+
+    pokemonToDelete = JSON.parse(sessionStorage.getItem("Selected-Pokemon"));
+    Dom.deleteModal.classList.remove("hidden");
+})};
+
+
+Dom.cancelDeleteBtn.addEventListener("click", () => {
+    Dom.deleteModal.classList.add("hidden");
+    pokemonToDelete = null;
+});
+
+Dom.confirmDeleteBtn.addEventListener("click", () => {
+    if (!pokemonToDelete) return;
+
+    const pokeID = pokemonToDelete.pokeID;
+    deletePoke(pokeID);
+})
