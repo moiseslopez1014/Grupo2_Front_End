@@ -1,6 +1,4 @@
-/////////////////////////////////////////////////////////////////////////////////////////////
-///         ALVARO         AQUI          ABAJO
-/// //////////////////////////////////////////////////////////////////////////////////////
+
 @font-face {
     font-family: "PIXEL" ;
     src: url(../src/fonts/PKMNRBYGSC.ttf);
@@ -13,27 +11,188 @@
 }
 
 body{
+    padding-right: 40px;
+    padding-left: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #ede07f;
 }
-.cubo{
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+header{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.logoImg{
+    margin-right: 70px;
+    z-index: 0;
+    width: 200px;
+    height: 100px;
+    background-image: url(../images/logo1.png);
+    background-repeat: no-repeat;
+    background-size: 200px,100px;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// 
+/// 
+.conteiner{
+    border: 2px solid #000;
+    //    height: 500px;
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr; /* primera fila: 2 columnas */
+    grid-template-rows: auto auto auto;    /* 3 filas */
+    gap: 10px;
+    }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////    /// 
+
+    .left{
+        margin: 0;
+        border: 2px solid #000;
+    }
+    .cubo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        //height: 390px;
+      border: 2px solid #000;
+    }
+    
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.cubo2{
+    padding-top: 20px;
+    border: 2px solid #000;
+    z-index: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
+#section2{
+   // border: 2px solid #000;
+    height: 500px;
+}
+
+#shapeDiv{
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+#editContainer{
+    border: 2px solid #000;
+    position: relative;
+    top: -73px;
+    background-color: transparent;
+    z-index: 10;
+    width: 100%;
+    height: 110px;
+}
+.imgPoke{
+    
+    border: 2px solid #000;
+    width: 100%;
+    height: auto;
+
+//    border: 2px solid #ff0000;
+
+}
+#editButton{
+    margin-left: 20px;
+    margin-top: 50px;
+    width: 150px;
+    height: 40px;
+}
+#descriptionDiv{
+    margin: 20px;
+    margin-top: 10px;
+padding: 30px;    
+    font-size: 22px;
+    display: flex;
+justify-content: center;
+align-items: center;
+    text-align: center;
+    height: 100px;
+    font-weight: bolder;
+}
+.div0{
+    margin-top: 10px;
+    padding-top: 10px;
+    height: 1px;
+    display: flex;
+    padding-right: 20px;
+}
+.div1{
+
+    margin-top: 5px;
+    width: 20%;
+    border: 1px solid #242424;
+}
+.div2{
+    width: 10px;
+    height: 10px;
+    border: 1px solid #242424;
+}
+#section{
+    display: flex;
+}
+#typeDiv{
+    margin: 20px;
+    padding: 10px;
+    font-size: 28px;
+text-align: center;
+font-weight: bolder;
+}
+#weightDiv{
+    font-weight: bolder;
+    font-size: 22px;
+    text-align: center;
+    margin: 20px;
+}
+#heightDiv{
+    font-weight: bolder;
+    font-size: 22px;
+    text-align: center;
+    margin: 20px;
+    }
+
+#statsDiv {
+    border: 2px solid #000;
+    padding: 10px;     /* antes tenías 50px lateral → cortaba todo */
+    font-weight: bolder;
+    font-size: 18px;
+    text-align: center;
+}
+
+#statsDiv_conteiner {
+    margin-top: 10px;    /* se separa del h3 */
+    border: 2px solid #000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;         /* aseguramos que se expanda */
+}
+
+.statsLi {
+    padding: 8px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
 #movesDiv{
+
+    border: 2px solid black;
+//    margin-top: 100px;
+    flex-direction: column;
     display: flex;
 }
 .divMoves{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.imgPoke{
-    border: 2px solid #000;
-    width: 250px;
-    height: 250px;
 }
