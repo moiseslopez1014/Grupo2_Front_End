@@ -12,7 +12,7 @@ Dom.deleteButton.addEventListener("click", () => {
 
     pokemonToDelete = JSON.parse(sessionStorage.getItem("Selected-Pokemon"));
     Dom.deleteModal.classList.remove("hidden");
-})};
+});
 
 
 Dom.cancelDeleteBtn.addEventListener("click", () => {
@@ -26,3 +26,4 @@ Dom.confirmDeleteBtn.addEventListener("click", () => {
     const pokeID = pokemonToDelete.pokeID;
     deletePoke(pokeID);
 })
+}
