@@ -8,12 +8,9 @@ export async function deletePoke(pokeID) {
         method: "DELETE",
         headers:{"Content-type": "application/json"}    
         })
-        if(!response.ok){
-            const errMessage = await response.text();
-            throw new Error(errMessage);
-        }
+        if(!response.ok) throw new Error("hubo un problema al eliminar el pokemon");
         const data = await response.json();
-        console.log(data);
+        console.log("Deleted: ",data);
         Dom.deleteModal.classList.add("hidden");
         return window.location.reload();
 
