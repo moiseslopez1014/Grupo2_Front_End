@@ -21,13 +21,16 @@ body{
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 header{
+
     width: 100%;
     display: flex;
     justify-content: end;
-    align-items: end;
+    align-items: center;
+    margin-top: 2%;
+    margin-right: 4%;
 }
 .logoImg{
-    margin-right: 70px;
+    margin-right: 10px;
     z-index: 0;
     width: 200px;
     height: 100px;
@@ -101,6 +104,20 @@ header{
     align-items: flex-start;
 
     //overflow-y: auto;
+}
+#OUT{
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: #005eff;
+    border-radius: 10px;
+    margin-right: 100px;
+    width: 100px;
+    transition: transform 0.3s ease-in-out;
+    height: 40px;
+}
+
+#OUT:hover {
+    transform: scale(1.1);
 }
 
 /* Oculto */
