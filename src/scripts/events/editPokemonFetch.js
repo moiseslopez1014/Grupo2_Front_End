@@ -55,7 +55,7 @@ export async function editPokemon(pokeID) {
               pokemon.pokeOverview.description
             }</textarea>
         </div>
-
+<div class="tipeBox">
         <!-- Fila con 3 columnas -->
         <div class="editBasicBox">
             <label>Tipo</label>
@@ -63,17 +63,17 @@ export async function editPokemon(pokeID) {
               ","
             )}">
         </div>
-
+            
         <div class="editBasicBox">
             <label>Peso</label>
             <input id="editWeight" value="${pokemon.pokeOverview.weight}">
         </div>
-
+            
         <div class="editBasicBox">
             <label>Altura</label>
             <input id="editHeight" value="${pokemon.pokeOverview.height}">
         </div>
-
+</div>
         <!-- TÍTULO STATS -->
         <h2 class="editStatsTitle">Estadísticas</h2>
 
