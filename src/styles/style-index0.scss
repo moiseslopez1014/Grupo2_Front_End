@@ -4,7 +4,7 @@
 }
 
 * {
-  overflow-y: hidden;
+  //overflow-y: hidden;
   font-family: "PIXEL", sans-serif;
   margin: 0;
   padding: 0;
@@ -39,14 +39,22 @@ body {
   height: 400px;
 }
 .divPika{
+   float: right;
+  background-size: 250px;
+  background-repeat: no-repeat;
+  background-image: url("../images/output-onlinepngtools.png");
   position: relative;
-  top: -174px;
+  top: -74px;
   left: 0;
-  z-index: 10;
+  width: 300px;
+  height: 340px;
+  z-index: 15;
+  //background-size: cover;
 }
 .section {
   display: flex;
   justify-content: center;
+  z-index: 10;
 }
 #backBtn {
   margin: 10px;
@@ -79,13 +87,8 @@ body {
   }
 }
 
-#pngPikachu {
-  display: flex;
-  flex-direction: row;
-  justify-self: right;
-  width: 200px;
-  margin-right: 20vw;
-  margin-bottom: 30vw;
+.divPika {
+
   animation: wobble 4s infinite;
   @keyframes wobble {
     0% {
